@@ -13,34 +13,42 @@ const images = [
   {
     src: image6,
     alt: 'Une image de tresses de type twist',
+    title: '70€',
   },
   {
     src: image2,
     alt: 'Une image de tresses de type bohemian braids',
+    title: '70€',
   },
   {
     src: image7,
     alt: 'Une image de tresses de type passion twist',
+    title: '70€',
   },
   {
     src: image8,
     alt: 'Une image de tresses de type conrows and braids',
+    title: '70€',
   },
   {
     src: image3,
     alt: 'Une image de tresses de type conrows',
+    title: '70€',
   },
   {
     src: image4,
     alt: 'Une image de tresses de type knotless braids',
+    title: '70€',
   },
   {
     src: image5,
     alt: 'Une image de tresses de type box braids',
+    title: '70€',
   },
   {
     src: image1,
     alt: 'Une image de tresses collées',
+    title: '40€',
   },
 ]
 ---
@@ -53,7 +61,7 @@ const images = [
     <meta name="generator" content={Astro.generator} />
     <title>MKHair.fr</title>
   </head>
-  <body class="bg-black text-gray-400">
+  <body class="bg-black text-white">
     <div
       class="h-14 fixed z-10 top-0 sm:top-auto sm:bottom-0 bg-black left-0 right-0 p-3"
     >
@@ -68,11 +76,16 @@ const images = [
     >
       {
         images.map((image) => (
-          <CustomImage
-            className="h-[80vh] sm:h-[700px] lg:h-[calc(50vh-28px)]"
-            src={image.src}
-            alt={image.alt}
-          />
+          <div class="relative">
+            <CustomImage
+              className="h-[80vh] sm:h-[700px] lg:h-[calc(50vh-28px)]"
+              src={image.src}
+              alt={image.alt}
+            />
+            <h2 class="absolute pl-10 py-4 font-serif left-0 right-52 bottom-0 text-4xl bg-gradient-to-r from-black to-transparent mb-4">
+              {image.title}
+            </h2>
+          </div>
         ))
       }
     </div>
