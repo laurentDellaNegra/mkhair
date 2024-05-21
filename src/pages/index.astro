@@ -1,5 +1,4 @@
 ---
-import { Image, Picture } from 'astro:assets'
 import image1 from '../images/1.jpeg'
 import image2 from '../images/2.jpeg'
 import image3 from '../images/3.jpeg'
@@ -9,58 +8,73 @@ import image6 from '../images/6.jpeg'
 import image7 from '../images/7.jpeg'
 import image8 from '../images/8.jpeg'
 import CustomImage from '../components/CustomImage.astro'
+
+const images = [
+  {
+    src: image6,
+    alt: 'Une image de tresses de type twist',
+  },
+  {
+    src: image2,
+    alt: 'Une image de tresses de type bohemian braids',
+  },
+  {
+    src: image7,
+    alt: 'Une image de tresses de type passion twist',
+  },
+  {
+    src: image8,
+    alt: 'Une image de tresses de type conrows and braids',
+  },
+  {
+    src: image3,
+    alt: 'Une image de tresses de type conrows',
+  },
+  {
+    src: image4,
+    alt: 'Une image de tresses de type knotless braids',
+  },
+  {
+    src: image5,
+    alt: 'Une image de tresses de type box braids',
+  },
+  {
+    src: image1,
+    alt: 'Une image de tresses collées',
+  },
+]
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>MKHair.fr</title>
   </head>
-  <body class="bg-slate-800 text-gray-400">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 h-screen">
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image1}
-        alt="Une image de tresses collées"
+  <body class="bg-black text-gray-400">
+    <div
+      class="h-14 fixed z-10 top-0 sm:top-auto sm:bottom-0 bg-black left-0 right-0 p-3"
+    >
+      <img
+        class="h-8 w-auto"
+        src="/logo.svg"
+        alt="Un logo avec écrit MKHair.fr"
       />
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image2}
-        alt="Une image de tresses de type bohemian braids"
-      />
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image3}
-        alt="Une image de tresses de type conrows"
-      />
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image4}
-        alt="Une image de tresses de type knotless braids"
-      />
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image5}
-        alt="Une image de tresses de type box braids"
-      />
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image6}
-        alt="Une image de tresses de type twist"
-      />
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image7}
-        alt="Une image de tresses de type passion twist"
-      />
-      <CustomImage
-        className="h-[800px] lg:h-[50vh]"
-        src={image8}
-        alt="Une image de tresses de type conrows and braids"
-      />
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 h-[calc(100vh-56px)]"
+    >
+      {
+        images.map((image) => (
+          <CustomImage
+            className="h-[80vh] sm:h-[700px] lg:h-[calc(50vh-28px)]"
+            src={image.src}
+            alt={image.alt}
+          />
+        ))
+      }
     </div>
   </body>
 </html>

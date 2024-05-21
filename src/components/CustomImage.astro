@@ -36,7 +36,7 @@ const sizeLogic = (size: string) => {
   height={sizeLogic(size)}
   class:list={[
     imgClassName,
-    'w-full h-full object-cover object-center text-neutral-400/0',
+    'w-full h-full object-cover object-center text-neutral-400/0 saturate-50',
     loadBlur ? 'imgLoading' : 'imgLoaded',
   ]}
   draggable={draggable}
@@ -49,15 +49,15 @@ const sizeLogic = (size: string) => {
 
 <style>
   .imgLoading {
-    @apply origin-center bg-neutral-100/[5%] scale-125 brightness-125 md:brightness-50 translate-y-4 blur-md;
+    @apply origin-center bg-neutral-100/[5%] scale-125 brightness-125 md:brightness-50 translate-y-4 blur-lg;
   }
   .imgLoaded {
-    @apply scale-100 opacity-100 blur-none brightness-100 rotate-0 translate-y-0 transition-all duration-700 ease-in-out;
+    @apply scale-100 opacity-100 blur-none brightness-100 rotate-0 translate-y-0 transition-all duration-1000 ease-in-out;
   }
 </style>
 
 <script>
-  let customImage = document.getElementsByClassName('imgLoading')
+  const customImage = document.getElementsByClassName('imgLoading')
 
   //loop through the objects of <img/> found on the page with "imgLoading" class, and perform unblurring effect
   const unblur = () => {
