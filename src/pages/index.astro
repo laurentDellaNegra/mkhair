@@ -13,42 +13,50 @@ const images = [
   {
     src: image6,
     alt: 'Une image de tresses de type twist',
-    title: '70€',
+    title: 'Twist',
+    price: '40 - 70€',
   },
   {
     src: image2,
     alt: 'Une image de tresses de type bohemian braids',
-    title: '70€',
+    title: 'Bohemian braids',
+    price: '70€',
   },
   {
     src: image7,
     alt: 'Une image de tresses de type passion twist',
-    title: '70€',
+    title: 'Passion twist',
+    price: '70€',
   },
   {
     src: image8,
-    alt: 'Une image de tresses de type conrows and braids',
-    title: '70€',
+    alt: 'Une image de tresses de type conrows et braids',
+    title: 'Conrows & braids',
+    price: '70€',
   },
   {
     src: image3,
     alt: 'Une image de tresses de type conrows',
-    title: '70€',
+    title: 'Conrows',
+    price: '40 - 70€',
   },
   {
     src: image4,
     alt: 'Une image de tresses de type knotless braids',
-    title: '70€',
+    title: 'Knotless braids',
+    price: '70€',
   },
   {
     src: image5,
     alt: 'Une image de tresses de type box braids',
-    title: '70€',
+    title: 'Box braids',
+    price: '70€',
   },
   {
     src: image1,
     alt: 'Une image de tresses collées',
-    title: '40€',
+    title: 'Tresses collées',
+    price: '25 - 40€',
   },
 ]
 ---
@@ -63,7 +71,7 @@ const images = [
   </head>
   <body class="bg-black text-white">
     <div
-      class="h-14 fixed z-10 top-0 sm:top-auto sm:bottom-0 bg-black left-0 right-0 p-3"
+      class="h-14 fixed z-20 top-0 sm:top-auto sm:bottom-0 bg-black left-0 right-0 p-3"
     >
       <img
         class="h-8 w-auto"
@@ -77,14 +85,17 @@ const images = [
       {
         images.map((image) => (
           <div class="relative">
+            <h2 class="animate-slideinRight z-10 opacity-0 absolute pr-5 py-2 font-serif left-[6rem] right-0 text-right top-0 text-2xl bg-gradient-to-l from-black to-transparent mt-14">
+              {image.title}
+            </h2>
             <CustomImage
               className="h-[80vh] sm:h-[700px] lg:h-[calc(50vh-28px)]"
               src={image.src}
               alt={image.alt}
             />
-            <h2 class="animate-slidein opacity-0 absolute pl-10 py-4 font-serif left-0 right-52 bottom-0 text-4xl bg-gradient-to-r from-black to-transparent mb-4">
-              {image.title}
-            </h2>
+            <h3 class="animate-slideinLeft opacity-0 absolute pl-5 py-2 font-serif left-0 right-52 bottom-0 text-2xl bg-gradient-to-r from-black to-transparent mb-4">
+              {image.price}
+            </h3>
           </div>
         ))
       }

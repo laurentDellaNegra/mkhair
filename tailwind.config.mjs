@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       keyframes: {
-        slidein: {
+        slideinLeft: {
           from: {
             opacity: '0',
             transform: 'translateX(-50px)',
@@ -14,9 +14,20 @@ export default {
             transform: 'translateX(0)',
           },
         },
+        slideinRight: {
+          from: {
+            opacity: '0',
+            transform: 'translateX(50px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
       },
       animation: {
-        slidein: 'slidein 1.5s ease 300ms forwards',
+        slideinLeft: 'slideinLeft 1.5s ease 300ms forwards',
+        slideinRight: 'slideinRight 1.5s ease 300ms forwards',
       },
     },
   },
