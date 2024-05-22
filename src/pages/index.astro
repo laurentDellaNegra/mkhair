@@ -71,25 +71,54 @@ const images = [
   </head>
   <body class="bg-black text-white">
     <div
-      class="h-14 fixed z-20 top-0 sm:top-auto sm:bottom-0 bg-black left-0 right-0 p-3"
+      class="h-20 fixed z-20 top-0 sm:top-auto sm:bottom-0 bg-black left-0 right-0 p-3 flex flex-row justify-between items-center"
     >
-      <img
-        class="h-8 w-auto"
-        src="/logo.svg"
-        alt="Un logo avec écrit MKHair.fr"
-      />
+      <a href="/">
+        <img
+          class="h-8 w-auto"
+          src="/logo.svg"
+          alt="Un logo avec écrit MKHair.fr"
+        />
+      </a>
+      <div
+        class="hidden sm:flex flex-row justify-between gap-1 items-center text-gray-400"
+      >
+        <img class="h-8 w-auto" src="/gps.svg" alt="Un logo de gps" />Toulouse -
+        Castres
+      </div>
+      <div class="flex flex-row justify-between gap-4">
+        <a href="https://www.instagram.com/malika.bcr">
+          <img
+            class="h-8 w-auto"
+            src="/instagram.svg"
+            alt="Un logo d'instagram"
+          />
+        </a>
+        <a href="https://snapchat.com/t/AdYd6MNv">
+          <img class="h-8 w-auto" src="/tiktok.svg" alt="Un logo de tiktok" />
+        </a>
+        <a href="tel:+33788982019">
+          <img class="h-8 w-auto" src="/phone.svg" alt="Un logo de tiktok" />
+        </a>
+      </div>
     </div>
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 h-[calc(100vh-56px)]"
+      class="md:hidden flex flex-row gap-1 items-center bg-gray-900 text-gray-400 text-center justify-center p-2 mt-20"
+    >
+      <img class="h-8 w-auto" src="/gps.svg" alt="Un logo de gps" />
+      <span>Toulouse - Castres</span>
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 h-[calc(100vh-80px)]"
     >
       {
         images.map((image) => (
           <div class="relative">
-            <h2 class="animate-slideinRight z-10 opacity-0 absolute pr-5 py-2 font-serif left-[6rem] right-0 text-right top-0 text-2xl bg-gradient-to-l from-black to-transparent mt-14">
+            <h2 class="animate-slideinRight z-10 opacity-0 absolute pr-5 py-2 font-serif left-[6rem] right-0 text-right top-0 text-2xl bg-gradient-to-l from-black to-transparent mt-4">
               {image.title}
             </h2>
             <CustomImage
-              className="h-[80vh] sm:h-[700px] lg:h-[calc(50vh-28px)]"
+              className="h-[80vh] sm:h-[700px] lg:h-[calc(50vh-40px)]"
               src={image.src}
               alt={image.alt}
             />
