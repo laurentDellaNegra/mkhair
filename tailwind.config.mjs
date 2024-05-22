@@ -2,7 +2,23 @@
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        slidein: {
+          from: {
+            opacity: '0',
+            transform: 'translateX(-50px)',
+          },
+          to: {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
+        },
+      },
+      animation: {
+        slidein: 'slidein 1.5s ease 300ms forwards',
+      },
+    },
   },
   plugins: [],
 }
